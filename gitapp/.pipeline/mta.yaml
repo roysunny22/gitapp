@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    def mtaFile = 'mta.yaml'
+                    if (!fileExists(mtaFile)) {
+                        error "File not found: ${mtaFile}"
+                    }
+                    sh "cat ${mtaFile}"
+                }
+                // Your existing build steps here
+            }
+        }
+    }
+}
