@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Build
+        run: echo "Building..."
+        # Add your build steps here
+
+      - name: Test
+        run: echo "Testing..."
+        # Add your test steps here
+
+      - name: Deploy
+        run: echo "Deploying..."
+        # Add your deploy steps here
